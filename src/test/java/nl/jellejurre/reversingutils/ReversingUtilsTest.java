@@ -40,8 +40,8 @@ public class ReversingUtilsTest {
         // We are rolling on the Ruined Portal Loot Table, which has 4-8 rolls.
         // So the first random call will be the amount of rolls. Since there are five values it can take, minecraft does nextInt(5) since nextInt isn't inclusive.
         dynamicProgram.add(JavaCalls.nextInt(5).equalTo(4));
-        // We check the value of the first three rolls. Any more and it will be too rare.
-        for (int i = 0; i < 3; i++) {
+        // We check the value of the first four rolls. Any more and it will be too rare.
+        for (int i = 0; i < 4; i++) {
             // For every roll, we want to know if the roll is gold blocks, which has its values equal to 397.
             // The easiest way to check this is to look at LootPool.precomputedWeights during generation.
             dynamicProgram.add(JavaCalls.nextInt(398).equalTo(397));
@@ -68,7 +68,7 @@ public class ReversingUtilsTest {
             LootTable portalTable = MCLootTables.RUINED_PORTAL_CHEST;
             LootContext context = new LootContext(lootseed);
             portalTable.apply(MCVersion.v1_16);
-            assertTrue(portalTable.generate(context).stream().anyMatch(item -> item.getItem().equals(Items.GOLD_BLOCK) && item.getCount() >= 6));
+            assertTrue(portalTable.generate(context).stream().anyMatch(item -> item.getItem().equals(Items.GOLD_BLOCK) && item.getCount() >= 8));
         }
 
         // Validate using libraries
@@ -79,7 +79,7 @@ public class ReversingUtilsTest {
             OverworldTerrainGenerator terrainGenerator = new OverworldTerrainGenerator(biomeSource);
             if(generator.generate(terrainGenerator, location.getSecond())){
                 List<ChestContent> loot = portal.getLoot(location.getFirst(), generator, false);
-                assertTrue(loot.get(0).containsAtLeast(Items.GOLD_BLOCK, 6));
+                assertTrue(loot.get(0).containsAtLeast(Items.GOLD_BLOCK, 8));
             }
         }
     }
