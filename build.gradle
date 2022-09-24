@@ -40,7 +40,7 @@ dependencies {
     implementation('com.seedfinding:mc_feature:c29fd1fcd746e14c1bcdb127da3113ba273db1fd') { transitive = false }
 
 
-    implementation('com.seedfinding:mc_reversal:LATEST') { transitive = false }
+    implementation('com.seedfinding:mc_reversal:1.171.1') { transitive = false }
 
     implementation('com.seedfinding:latticg:1.06')
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'

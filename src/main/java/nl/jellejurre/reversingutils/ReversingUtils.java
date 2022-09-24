@@ -24,9 +24,9 @@ public class ReversingUtils {
     public static List<Long> getDecoratorSeedsFromLootSeeds(List<Long> lootSeeds){
         List<Long> decoratorSeeds = new ArrayList<>();
         for (Long lootSeed : lootSeeds) {
-            if(!WorldSeed.isRandom(lootSeed)){
-                continue;
-            }
+//            if(!WorldSeed.isRandom(lootSeed)){
+//                continue;
+//            }
             long validSeed = lootSeed ^ LCG.JAVA.multiplier & Mth.MASK_48;
             decoratorSeeds.addAll(NextLongReverser.getSeeds(validSeed));
         }
