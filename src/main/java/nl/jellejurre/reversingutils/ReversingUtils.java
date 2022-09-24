@@ -19,7 +19,7 @@ public class ReversingUtils {
     }
 
     public static List<Pair<Long, CPos>> getLocationsFromLootSeeds(List<Long> lootSeeds, int salt, int minChunkX, int minChunkZ, int maxChunkX, int maxChunkZ, MCVersion version){
-        return getLocationsFromLootSeeds(lootSeeds, salt%10, salt/10000, minChunkX, minChunkZ, maxChunkX, maxChunkZ, version);
+        return getLocationsFromLootSeeds(lootSeeds, salt%10000, salt/10000, minChunkX, minChunkZ, maxChunkX, maxChunkZ, version);
     }
     public static List<Long> getDecoratorSeedsFromLootSeeds(List<Long> lootSeeds){
         List<Long> decoratorSeeds = new ArrayList<>();
@@ -33,7 +33,7 @@ public class ReversingUtils {
         return decoratorSeeds;
     }
     public static List<Long> getPopulationSeedsFromDecoratorSeeds(List<Long> decoratorSeeds, int salt, MCVersion version){
-        return getPopulationSeedsFromDecoratorSeeds(decoratorSeeds, salt%10, salt/10000, version);
+        return getPopulationSeedsFromDecoratorSeeds(decoratorSeeds, salt%10000, salt/10000, version);
     }
 
     public static List<Long> getPopulationSeedsFromDecoratorSeeds(List<Long> decoratorSeeds, int index, int step, MCVersion version){
