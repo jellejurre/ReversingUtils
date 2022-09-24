@@ -29,7 +29,7 @@ and the following to your build.gradle dependencies block:
     implementation('com.seedfinding:mc_biome:b2271807a047bb43ac60c8c20ad47e315f19b9a6') { transitive = false }
     implementation('com.seedfinding:mc_terrain:9e937ddb838e28e79423c287fa18b1ce66f061d7') { transitive = false }
     implementation('com.seedfinding:mc_feature:c29fd1fcd746e14c1bcdb127da3113ba273db1fd') { transitive = false }
-    implementation('com.seedfinding:mc_reversal:2.0.0') { transitive = false } 
+    implementation('com.seedfinding:mc_reversal:1.171.1') { transitive = false }
     implementation('com.seedfinding:latticg:1.06')
     implementation('com.github.jellejurre:reversingutils:main-SNAPSHOT'){transitive=false}
 ```
